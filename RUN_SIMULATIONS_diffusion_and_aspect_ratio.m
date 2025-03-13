@@ -3,7 +3,7 @@
 
 %Conducts a sweep of simulations on tubes of varying circumferences and
 %with varying viral diffusion coefficients. Generates data of the type used
-%in Figure 1 of the manuscript.
+%in Figure 2 and Figure S2 of the manuscript.
 
 
 
@@ -18,8 +18,8 @@ mkdir(target_folder)
 
 %loop setup
 num_reps = 10;
-tube_circ_sweep = 4; %[4,8,16,32,64];
-diff_sweep = [0, 1]; %[0, 1, 10, 100, 1000, Inf];
+tube_circ_sweep = [4,8,16,32,64];
+diff_sweep = [0, 1, 10, 100, 1000, Inf];
 
 
 %fixed number of cells

@@ -126,10 +126,13 @@ function [sim_out] = single_run_as_func(init_cells, out_times, params)
     generation_widths =  round(total_tissue_size_y ./ generation_num_tubes);
     generation_ends = [0, cumsum(generation_lengths)];
 
-
     %set up mesh for PDE
     mesh_parameters;
     make_diff_matrix;
+
+    %initialise a count for infections from each mechanism
+    tot_cf_inf = 0;
+    tot_cc_inf = 0;
 
 
 
@@ -296,6 +299,13 @@ function [sim_out] = single_run_as_func(init_cells, out_times, params)
         %increment time
         t=t+dt;
     end
+
+    %compute proportion of infections from cell-to-cell infection
+    if sum(sum((cell_grid == target_id)))==0
+        pcc_this_sim = tot_cc_inf / (tot_cc_inf + tot_cf_inf);
+    else
+        pcc_this_sim = NaN;
+    end
     
 
     %output information
@@ -307,6 +317,7 @@ function [sim_out] = single_run_as_func(init_cells, out_times, params)
     sim_out.section_sums = section_sums(:,1:num_output_points);
     sim_out.final_grid_state = abs(cell_grid);
     sim_out.num_output_points = num_output_points;
+    sim_out.pcc_this_sim = pcc_this_sim;
 
     
     if export_frames

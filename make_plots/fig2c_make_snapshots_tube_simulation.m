@@ -1,7 +1,7 @@
 
 
 
-%Makes Figure 1(c) from the manuscript (up to stochastic noise)
+%Makes Figure 2(c) from the manuscript (up to stochastic noise)
 
 
 

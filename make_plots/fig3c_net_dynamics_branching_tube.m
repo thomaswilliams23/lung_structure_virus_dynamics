@@ -1,7 +1,7 @@
 
 
 
-%Makes Figure 2(c) from the manuscript
+%Makes Figure 3(c) from the manuscript
 
 
 

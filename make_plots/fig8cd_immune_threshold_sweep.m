@@ -1,7 +1,7 @@
 
 
 
-%Makes Figure 7(c) and (d) from the manuscript
+%Makes Figure 8(c) and (d) from the manuscript
 
 
 
@@ -51,7 +51,7 @@ save_stuff = 1;
 
 
 
-%% plot
+%% main loop
 for start_on_left_edge = [0,1]
 
 
@@ -198,7 +198,3 @@ for start_on_left_edge = [0,1]
     end
 
 end
-
-
-
-

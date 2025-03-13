@@ -1,8 +1,7 @@
 
 
 
-%Makes Figure 1(d) and (e) from the manuscript and SI Figure 1 from the
-%Supplementary Information
+%Makes Figure 2(d) and (e) from the manuscript
 
 
 

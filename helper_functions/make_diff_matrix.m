@@ -45,17 +45,17 @@ for node_i = 1:mesh_width
         %get linear index
         cell_ind = sub2ind(grid_dims, node_i, node_j);
 
-        %get indices of neighbours
+        %get indices of neighbours (NaN if on edge and non periodic)
         [neighbour_i, neighbour_j] = get_neighbour_indices(...
             node_i, node_j, grid_dims,  mesh_generation_lengths, mesh_generation_widths);
 
-        %get linear indices of neighbours
-        bl_neighbour(cell_ind) = sub2ind(grid_dims, neighbour_i(1), neighbour_j(1));
-        tl_neighbour(cell_ind) = sub2ind(grid_dims, neighbour_i(2), neighbour_j(2));
-        b_neighbour(cell_ind) = sub2ind(grid_dims, neighbour_i(3), neighbour_j(3));
-        t_neighbour(cell_ind) = sub2ind(grid_dims, neighbour_i(4), neighbour_j(4));
-        br_neighbour(cell_ind) = sub2ind(grid_dims, neighbour_i(5), neighbour_j(5));
-        tr_neighbour(cell_ind) = sub2ind(grid_dims, neighbour_i(6), neighbour_j(6));
+        %get linear indices of neighbours (NaN if doesn't exist, will be filled in below)
+        bl_neighbour(cell_ind) = sub2indorNaN(grid_dims, neighbour_i(1), neighbour_j(1));
+        tl_neighbour(cell_ind) = sub2indorNaN(grid_dims, neighbour_i(2), neighbour_j(2));
+        b_neighbour(cell_ind) = sub2indorNaN(grid_dims, neighbour_i(3), neighbour_j(3));
+        t_neighbour(cell_ind) = sub2indorNaN(grid_dims, neighbour_i(4), neighbour_j(4));
+        br_neighbour(cell_ind) = sub2indorNaN(grid_dims, neighbour_i(5), neighbour_j(5));
+        tr_neighbour(cell_ind) = sub2indorNaN(grid_dims, neighbour_i(6), neighbour_j(6));
 
     end
 end
@@ -136,3 +136,17 @@ end
 %% set up diffusion matrix
 sparse_size = length(diff_vals);
 diff_matrix = sparse(i_inds, j_inds, diff_vals, total_mesh_nodes, total_mesh_nodes, sparse_size);
+
+
+
+
+%% helper function for handling NaNs in sub2ind
+function indorNaN = sub2indorNaN(grid_dims, ind_i, ind_j)
+    
+    if isnan(ind_i) || isnan(ind_j)
+        indorNaN = NaN;
+    else
+        indorNaN = sub2ind(grid_dims, ind_i, ind_j);
+    end
+
+end

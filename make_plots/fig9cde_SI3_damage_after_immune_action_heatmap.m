@@ -1,7 +1,7 @@
 
 
 
-%Makes Figure 8(b), (c) and (d) from the manuscript and SI Figure 3 from
+%Makes Figure 9(c), (d) and (e) from the manuscript and SI Figure 3 from
 %the Supplementary Information
 
 

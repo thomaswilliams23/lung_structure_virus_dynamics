@@ -1,7 +1,7 @@
 
 
 
-%Makes Figure 3 from the manuscript
+%Makes Figure 4 from the manuscript
 
 
 
@@ -178,6 +178,7 @@ ylabel('Hours');
 
 legend([p1, p2], {'$t_{\mathrm{peak}}$', '$t_{0.5}$'}, ...
     'Interpreter', 'latex', 'FontSize', round(0.9*fig_font_size), 'Location', 'SouthEast')
+
 
 
 %optionally save

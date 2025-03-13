@@ -58,6 +58,9 @@ for i=1:total_tissue_size_x
             %CELL-CELL INFECTION
             if (rnd_draw <= prob_CC_inf)
 
+                %count a cc infection
+                tot_cc_inf = tot_cc_inf + 1;
+
                 %initialise
                 inf_neighbours = zeros(1,num_lineages);
 
@@ -98,6 +101,8 @@ for i=1:total_tissue_size_x
             %CELL-FREE INFECTION    
             elseif ((rnd_draw<=prob_t_to_e) && (rnd_draw>prob_CC_inf))
 
+                %count a cf infection
+                tot_cf_inf = tot_cf_inf + 1;
 
                 %quantify infection prob contributions from each lineage
                 cumulative_unscaled_lineage_probs = zeros(1, num_lineages);

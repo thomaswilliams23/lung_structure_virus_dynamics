@@ -1,7 +1,7 @@
 
 
 
-%Makes Figure 7(b) from the manuscript
+%Makes Figure 8(b) from the manuscript
 
 
 
@@ -119,6 +119,3 @@ legend([p1, p2], legend_names, ...
 if save_stuff
     SaveAsPngAndFig([], 'time_series_open_and_branching_edge', 9, 4/3, 9);
 end
-
-
-

@@ -1,7 +1,7 @@
 
 
 
-%Makes Figure 5(a) from the manuscript
+%Makes Figure 6(a) from the manuscript
 
 
 %% setup

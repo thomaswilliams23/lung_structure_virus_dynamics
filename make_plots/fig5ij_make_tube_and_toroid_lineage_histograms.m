@@ -1,8 +1,7 @@
 
 
 
-%Makes Figures 4(i) and (j) from the manuscript and SI Figure 2 from the  
-%Supplementary Information
+%Makes Figures 5(i) and (j) from the manuscript
 
 
 %% setup
@@ -172,29 +171,3 @@ fprintf('\nProbabilities of extinction:\n Circs:\n')
 disp(all_circs)
 fprintf('\nProb ext:\n')
 disp(prob_of_ext)
-
-
-
-%% make a histogram of species invasion depths across all circs
-
-figure
-hold on
-
-%loop over circumferences and compute density on invasion depth for
-%lineages
-for circ_ind = 1:length(all_circs)
-    [f, xi] = ksdensity(all_inv_depths(circ_ind,:), 'Function', 'pdf', 'Bandwidth', 30, ...
-        'Support', [-1,501], 'BoundaryCorrection', 'reflection');
-    plot(xi(f>0), f(f>0), 'Color', tube_colours(circ_ind,:));
-end
-
-%formatting
-xlim([0,500])
-xlabel('Lineage Invasion Depth')
-ylabel('Probability Density')
-legend(circ_labels, 'Location', 'North', 'Interpreter', 'latex', 'Fontsize', 7)
-
-%optionally save
-if save_stuff
-    SaveAsPngAndFig(-1, 'lineage_invasion_depths', 9, 1.6, 9);
-end

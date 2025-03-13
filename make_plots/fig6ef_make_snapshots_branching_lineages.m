@@ -1,7 +1,7 @@
 
 
 
-%Makes Figures 5(e) and (f) from the manuscript
+%Makes Figures 6(e) and (f) from the manuscript
 
 
 

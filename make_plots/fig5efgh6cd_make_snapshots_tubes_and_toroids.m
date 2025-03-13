@@ -1,7 +1,7 @@
 
 
 
-%Makes Figures 4(e), (f), (g), (h) and 5(c) and (d) from the manuscript
+%Makes Figures 5(e), (f), (g), (h) and 6(c) and (d) from the manuscript
 
 
 
