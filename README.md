@@ -1,6 +1,6 @@
 Code used for Williams et al., "Accounting for the geometry of the respiratory tract in viral infections"
 
-
+Simulation data which can be used with this code can be found on Figshare at DOI:10.26188/26499811
 
 
 All code is written in MATLAB. This repository is structured as follows. 
