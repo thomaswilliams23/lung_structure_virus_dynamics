@@ -1,4 +1,4 @@
-Code used for Williams et al., "Accounting for the geometry of the lung in viral infections"
+Code used for Williams et al., "Accounting for the geometry of the respiratory tract in viral infections"
 
 
 
